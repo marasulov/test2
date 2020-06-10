@@ -34,10 +34,12 @@ namespace test2.forms
                 if (table.Rows.Count > 0)
                 {
                     MessageBox.Show("yes");
+                    
                 }
                 else
                 {
-                    MessageBox.Show("No");
+                    labelErrorMessage.Visible = true;
+
                 }
             }
         }
