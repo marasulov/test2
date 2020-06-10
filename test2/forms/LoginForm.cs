@@ -33,7 +33,7 @@ namespace test2.forms
 
                 if (table.Rows.Count > 0)
                 {
-                    MessageBox.Show("yes");
+                    this.DialogResult = DialogResult.OK;
                     
                 }
                 else

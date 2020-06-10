@@ -38,7 +38,15 @@ namespace test2
 
             //conn.Close();
 
-
+            forms.LoginForm loginForm = new forms.LoginForm();
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new forms.MainForm());
+            }
+            else 
+            {
+                Application.Exit();
+            }
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
