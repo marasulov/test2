@@ -11,10 +11,15 @@ namespace test2.classes
     class func
     {
         Db_Connection connection = new Db_Connection();
-        public DataTable GetData(string query)
+        public DataTable getData(MySqlCommand command)
         {
-            MySqlCommand command = new MySqlCommand(query, connection.getConnection);
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            command.Connection = connection.getConnection;
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            return table;
         }
 
     }

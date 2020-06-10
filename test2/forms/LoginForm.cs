@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace test2.forms
 {
@@ -19,7 +20,26 @@ namespace test2.forms
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            checkFields();
+            string username = textBoxUsername.Text;
+            string password = textBoxPassword.Text;
+            classes.func func = new classes.func();
+
+            if (checkFields())
+            {
+                MySqlCommand command = new MySqlCommand("SELECT * FROM users WHERE username = @un AND password=@pass");
+                command.Parameters.Add("@un",MySqlDbType.VarChar).Value = username;
+                command.Parameters.Add("@pass",MySqlDbType.VarChar).Value = password;
+                DataTable table = func.getData(command);
+
+                if (table.Rows.Count > 0)
+                {
+                    MessageBox.Show("yes");
+                }
+                else
+                {
+                    MessageBox.Show("No");
+                }
+            }
         }
 
         //check if the uername or password are empty
@@ -29,7 +49,7 @@ namespace test2.forms
             labelUsername.Visible = false;
             labelPassword.Visible = false;
 
-            if (textBoxUsername.Text.Trim().Equals("") && (textBoxUsername.Text.Trim().Equals("")))
+            if (textBoxUsername.Text.Trim().Equals("") && (textBoxPassword.Text.Trim().Equals("")))
             {
                 labelUsername.Visible = true;
                 labelPassword.Visible = true;

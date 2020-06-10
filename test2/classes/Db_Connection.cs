@@ -9,7 +9,10 @@ namespace test2.classes
 {
     class Db_Connection
     {
-        MySqlConnection connection = new MySqlConnection("datasource=uz-ts; port=3306;username=marasulov, password=Qwerty13$;database=test");
+
+
+        //string connStr = "server=uz-ts;user=marasulov;database=test;password=Qwerty123$;";
+        MySqlConnection connection = new MySqlConnection("server=uz-ts;user=marasulov;database=test;password=Qwerty123$;");
 
         public MySqlConnection getConnection
         {
