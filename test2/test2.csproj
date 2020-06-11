@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{31542817-91FE-45BC-9794-BC46BB858A9C}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>test2</RootNamespace>
     <AssemblyName>test2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="classes\Db_Connection.cs" />
     <Compile Include="classes\func.cs" />
+    <Compile Include="classes\PROPERTY_TYPE.cs" />
     <Compile Include="forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,10 +65,22 @@
     <Compile Include="forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\PropertyTypesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\PropertyTypesForm.Designer.cs">
+      <DependentUpon>PropertyTypesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\PropertyTypesForm.resx">
+      <DependentUpon>PropertyTypesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

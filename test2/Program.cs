@@ -16,6 +16,9 @@ namespace test2
         [STAThread]
         static void Main()
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
             //string connStr = "server=uz-ts;user=marasulov;database=test;password=Qwerty123$;";
             //// создаём объект для подключения к БД
             //MySqlConnection conn = new MySqlConnection(connStr);
@@ -35,22 +38,19 @@ namespace test2
             //reader.Close(); // закрываем reader
             //                // закрываем соединение с БД
 
-
             //conn.Close();
 
-            forms.LoginForm loginForm = new forms.LoginForm();
-            if (loginForm.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new forms.MainForm());
-            }
-            else 
-            {
-                Application.Exit();
-            }
+            //forms.LoginForm loginForm = new forms.LoginForm();
+            //if (loginForm.ShowDialog() == DialogResult.OK)
+            //{
+            //    Application.Run(new forms.MainForm());
+            //}
+            //else 
+            //{
+            //    Application.Exit();
+            //}
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+
         }
     }
 }

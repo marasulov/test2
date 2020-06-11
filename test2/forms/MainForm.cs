@@ -16,5 +16,21 @@ namespace test2.forms
         {
             InitializeComponent();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            panel1.Height = this.Height;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonPropertyTypes_Click(object sender, EventArgs e)
+        {
+            PropertyTypesForm propertyTypes = new PropertyTypesForm();
+            propertyTypes.Show();
+        }
     }
 }
