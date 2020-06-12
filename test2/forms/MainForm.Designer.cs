@@ -35,7 +35,7 @@
             this.buttonClient = new System.Windows.Forms.Button();
             this.buttonOwner = new System.Windows.Forms.Button();
             this.buttonPropertyImages = new System.Windows.Forms.Button();
-            this.buttonPropertyTypes = new System.Windows.Forms.Button();
+            this.button90DelElbow = new System.Windows.Forms.Button();
             this.buttonProperty = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -59,11 +59,11 @@
             this.panel1.Controls.Add(this.buttonClient);
             this.panel1.Controls.Add(this.buttonOwner);
             this.panel1.Controls.Add(this.buttonPropertyImages);
-            this.panel1.Controls.Add(this.buttonPropertyTypes);
+            this.panel1.Controls.Add(this.button90DelElbow);
             this.panel1.Controls.Add(this.buttonProperty);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(446, 447);
+            this.panel1.Size = new System.Drawing.Size(446, 357);
             this.panel1.TabIndex = 0;
             // 
             // button2
@@ -151,20 +151,20 @@
             this.buttonPropertyImages.Text = "45DegElbow";
             this.buttonPropertyImages.UseVisualStyleBackColor = true;
             // 
-            // buttonPropertyTypes
+            // button90DelElbow
             // 
-            this.buttonPropertyTypes.FlatAppearance.BorderSize = 0;
-            this.buttonPropertyTypes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.buttonPropertyTypes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPropertyTypes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonPropertyTypes.ForeColor = System.Drawing.Color.Black;
-            this.buttonPropertyTypes.Location = new System.Drawing.Point(-2, 54);
-            this.buttonPropertyTypes.Name = "buttonPropertyTypes";
-            this.buttonPropertyTypes.Size = new System.Drawing.Size(211, 45);
-            this.buttonPropertyTypes.TabIndex = 0;
-            this.buttonPropertyTypes.Text = "90DegElbow";
-            this.buttonPropertyTypes.UseVisualStyleBackColor = true;
-            this.buttonPropertyTypes.Click += new System.EventHandler(this.buttonPropertyTypes_Click);
+            this.button90DelElbow.FlatAppearance.BorderSize = 0;
+            this.button90DelElbow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button90DelElbow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button90DelElbow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button90DelElbow.ForeColor = System.Drawing.Color.Black;
+            this.button90DelElbow.Location = new System.Drawing.Point(-2, 54);
+            this.button90DelElbow.Name = "button90DelElbow";
+            this.button90DelElbow.Size = new System.Drawing.Size(211, 45);
+            this.button90DelElbow.TabIndex = 0;
+            this.button90DelElbow.Text = "90DegElbow";
+            this.button90DelElbow.UseVisualStyleBackColor = true;
+            this.button90DelElbow.Click += new System.EventHandler(this.buttonPropertyTypes_Click);
             // 
             // buttonProperty
             // 
@@ -255,7 +255,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 450);
+            this.ClientSize = new System.Drawing.Size(447, 360);
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -274,7 +274,7 @@
         private System.Windows.Forms.Button buttonClient;
         private System.Windows.Forms.Button buttonOwner;
         private System.Windows.Forms.Button buttonPropertyImages;
-        private System.Windows.Forms.Button buttonPropertyTypes;
+        private System.Windows.Forms.Button button90DelElbow;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
