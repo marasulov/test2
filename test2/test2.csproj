@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="classes\Db_Connection.cs" />
     <Compile Include="classes\func.cs" />
+    <Compile Include="classes\Person.cs" />
     <Compile Include="classes\PROPERTY_TYPE.cs" />
     <Compile Include="forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -64,6 +65,18 @@
     </Compile>
     <Compile Include="forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\PropertyClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\PropertyClientForm.Designer.cs">
+      <DependentUpon>PropertyClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\PropertyOwnerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\PropertyOwnerForm.Designer.cs">
+      <DependentUpon>PropertyOwnerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\PropertyTypesForm.cs">
       <SubType>Form</SubType>
@@ -78,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\PropertyOwnerForm.resx">
+      <DependentUpon>PropertyOwnerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\PropertyTypesForm.resx">
       <DependentUpon>PropertyTypesForm.cs</DependentUpon>

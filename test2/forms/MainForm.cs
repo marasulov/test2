@@ -29,8 +29,14 @@ namespace test2.forms
 
         private void buttonPropertyTypes_Click(object sender, EventArgs e)
         {
-            PropertyTypesForm propertyTypes = new PropertyTypesForm();
-            propertyTypes.Show();
+            PropertyTypesForm propertyTypesF = new PropertyTypesForm();
+            propertyTypesF.Show();
+        }
+
+        private void buttonOwner_Click(object sender, EventArgs e)
+        {
+            PropertyOwnerForm propertyOwnerF = new PropertyOwnerForm();
+            propertyOwnerF.Show();
         }
     }
 }
