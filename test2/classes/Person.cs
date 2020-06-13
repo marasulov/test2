@@ -37,7 +37,7 @@ namespace test2.classes
         public DataTable getAllPersons(string ownerOrclient)
         {
             string tablename = ownerOrclient;
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `"+ tablename +"`;");
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `"+ tablename +"` ;");
 
             return func.getData(command);
 

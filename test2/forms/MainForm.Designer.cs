@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonSale = new System.Windows.Forms.Button();
-            this.buttonClient = new System.Windows.Forms.Button();
+            this.buttonReducingTee = new System.Windows.Forms.Button();
             this.buttonOwner = new System.Windows.Forms.Button();
             this.buttonPropertyImages = new System.Windows.Forms.Button();
             this.button90DelElbow = new System.Windows.Forms.Button();
             this.buttonProperty = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +56,7 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.buttonSale);
-            this.panel1.Controls.Add(this.buttonClient);
+            this.panel1.Controls.Add(this.buttonReducingTee);
             this.panel1.Controls.Add(this.buttonOwner);
             this.panel1.Controls.Add(this.buttonPropertyImages);
             this.panel1.Controls.Add(this.button90DelElbow);
@@ -65,6 +65,76 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(446, 357);
             this.panel1.TabIndex = 0;
+            // 
+            // button7
+            // 
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button7.ForeColor = System.Drawing.Color.Black;
+            this.button7.Location = new System.Drawing.Point(232, 258);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(211, 45);
+            this.button7.TabIndex = 0;
+            this.button7.Text = "Plug";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(232, 207);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(211, 45);
+            this.button6.TabIndex = 0;
+            this.button6.Text = "Cap";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(232, 156);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(211, 45);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "BlindFlange";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(232, 105);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(211, 45);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "OrificePlate";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(232, 54);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(211, 45);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "SpectacleBlind";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -108,19 +178,20 @@
             this.buttonSale.Text = "ConcentricReducer";
             this.buttonSale.UseVisualStyleBackColor = true;
             // 
-            // buttonClient
+            // buttonReducingTee
             // 
-            this.buttonClient.FlatAppearance.BorderSize = 0;
-            this.buttonClient.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.buttonClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonClient.ForeColor = System.Drawing.Color.Black;
-            this.buttonClient.Location = new System.Drawing.Point(-2, 207);
-            this.buttonClient.Name = "buttonClient";
-            this.buttonClient.Size = new System.Drawing.Size(211, 45);
-            this.buttonClient.TabIndex = 0;
-            this.buttonClient.Text = "ReducingTee";
-            this.buttonClient.UseVisualStyleBackColor = true;
+            this.buttonReducingTee.FlatAppearance.BorderSize = 0;
+            this.buttonReducingTee.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonReducingTee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReducingTee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonReducingTee.ForeColor = System.Drawing.Color.Black;
+            this.buttonReducingTee.Location = new System.Drawing.Point(-2, 207);
+            this.buttonReducingTee.Name = "buttonReducingTee";
+            this.buttonReducingTee.Size = new System.Drawing.Size(211, 45);
+            this.buttonReducingTee.TabIndex = 0;
+            this.buttonReducingTee.Text = "ReducingTee";
+            this.buttonReducingTee.UseVisualStyleBackColor = true;
+            this.buttonReducingTee.Click += new System.EventHandler(this.buttonReducingTee_Click);
             // 
             // buttonOwner
             // 
@@ -181,76 +252,6 @@
             this.buttonProperty.UseVisualStyleBackColor = true;
             this.buttonProperty.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(232, 54);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(211, 45);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "SpectacleBlind";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(232, 105);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(211, 45);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "OrificePlate";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(232, 156);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(211, 45);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "BlindFlange";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(232, 207);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(211, 45);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "Cap";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(232, 258);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(211, 45);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "Plug";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,7 +272,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonProperty;
         private System.Windows.Forms.Button buttonSale;
-        private System.Windows.Forms.Button buttonClient;
+        private System.Windows.Forms.Button buttonReducingTee;
         private System.Windows.Forms.Button buttonOwner;
         private System.Windows.Forms.Button buttonPropertyImages;
         private System.Windows.Forms.Button button90DelElbow;
