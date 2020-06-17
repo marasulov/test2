@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0a8d3d15a35f4c9cb8b94e6a95ea24f0" Name="Diagram1">
+        <EntityTypeShape EntityType="testModel.facilities" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.phases" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.pipes" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.projects" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.property_owner" Width="1.5" PointX="2.375" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.property_type" Width="1.5" PointX="4" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.subfacilities" Width="1.5" PointX="7.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.units" Width="1.5" PointX="9.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="testModel.users" Width="1.5" PointX="6.125" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="testModel.facilities_id" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.phase_id" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.project_id" ManuallyRouted="false" />
+        <AssociationConnector Association="testModel.subfacility_id" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

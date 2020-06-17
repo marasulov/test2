@@ -10,8 +10,8 @@ namespace test2.classes
 {
     class func
     {
-        Db_Connection connection = new Db_Connection();
-        
+        //Db_Connection connection = new Db_Connection();
+        testEntities dbEntities = new testEntities();
         /// <summary>
         /// get data
         /// </summary>
@@ -19,8 +19,7 @@ namespace test2.classes
         /// <returns></returns>
         public DataTable getData(MySqlCommand command)
         {
-            command.Connection = connection.getConnection;
-            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            db.
 
             DataTable table = new DataTable();
             adapter.Fill(table);

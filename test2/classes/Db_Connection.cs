@@ -9,7 +9,7 @@ namespace test2.classes
 {
     class Db_Connection
     {
-
+        testEntities dbEntities = new testEntities();
 
         //string connStr = "server=uz-ts;user=marasulov;database=test;password=Qwerty123$;";
         MySqlConnection connection = new MySqlConnection("server=uz-ts;user=marasulov;database=test;password=Qwerty123$;");

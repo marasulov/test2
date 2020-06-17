@@ -1,0 +1,530 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище testModel" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="facilities">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="phase_id" Type="int" />
+          <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="created_at" Type="timestamp" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="phases">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="project_id" Type="int" />
+          <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="created_at" Type="timestamp" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pipes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SpecName" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Npd" Type="float" />
+          <Property Name="NpdUnitType" Type="varchar" MaxLength="2" />
+          <Property Name="dn" Type="float" />
+          <Property Name="DnUnitType" Type="varchar" MaxLength="2" />
+          <Property Name="thickness" Type="float" />
+          <Property Name="ContractorCommodityCode" Type="varchar" MaxLength="45" />
+          <Property Name="ShortMaterialDescription" Type="varchar" MaxLength="45" />
+          <Property Name="LocalizedShortMaterialDesc" Type="varchar" MaxLength="45" />
+          <Property Name="LongMaterialDescription" Type="varchar" MaxLength="45" />
+          <Property Name="Vendor" Type="varchar" MaxLength="45" />
+          <Property Name="Manufacturer" Type="varchar" MaxLength="45" />
+          <Property Name="FabricationType" Type="int" />
+          <Property Name="SupplyResponsibility" Type="int" />
+          <Property Name="ReportingType" Type="int" />
+          <Property Name="QuantityOfReportableParts" Type="int" />
+          <Property Name="GasketRequirements" Type="int" />
+          <Property Name="BoltingRequirements" Type="int" />
+          <Property Name="ClampRequirement" Type="int" />
+          <Property Name="WeldingRequirement" Type="int" />
+          <Property Name="LooseMaterialRequirements" Type="varchar" MaxLength="45" />
+          <Property Name="SubstCapScrewsQuantity" Type="varchar" MaxLength="45" />
+          <Property Name="MultiportValveOpReq" Type="varchar" MaxLength="45" />
+          <Property Name="ValveOperatorType" Type="varchar" MaxLength="45" />
+          <Property Name="ValveOperatorCatalogPartNumber" Type="varchar" MaxLength="45" />
+          <Property Name="created_at" Type="timestamp" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="projects">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="created_at" Type="timestamp" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="property_owner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="first_name" Type="varchar" MaxLength="45" />
+          <Property Name="last_name" Type="varchar" MaxLength="45" />
+          <Property Name="phone" Type="int" />
+          <Property Name="email" Type="varchar" MaxLength="200" />
+          <Property Name="adress" Type="text" />
+        </EntityType>
+        <EntityType Name="property_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="description" Type="text" />
+        </EntityType>
+        <EntityType Name="subfacilities">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="facility_id" Type="int" />
+          <Property Name="created_at" Type="timestamp" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="units">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="subfacility_id" Type="int" />
+          <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="created_at" Type="timestamp" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="45" />
+          <Property Name="password" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <Association Name="facilities_id">
+          <End Role="facilities" Type="Self.facilities" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="subfacilities" Type="Self.subfacilities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="facilities">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="subfacilities">
+              <PropertyRef Name="facility_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="phase_id">
+          <End Role="phases" Type="Self.phases" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="facilities" Type="Self.facilities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="phases">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="facilities">
+              <PropertyRef Name="phase_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="project_id">
+          <End Role="projects" Type="Self.projects" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="phases" Type="Self.phases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projects">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="phases">
+              <PropertyRef Name="project_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="subfacility_id">
+          <End Role="subfacilities" Type="Self.subfacilities" Multiplicity="0..1" />
+          <End Role="units" Type="Self.units" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subfacilities">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="units">
+              <PropertyRef Name="subfacility_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище testModelContainer">
+          <EntitySet Name="facilities" EntityType="Self.facilities" Schema="test" store:Type="Tables" />
+          <EntitySet Name="phases" EntityType="Self.phases" Schema="test" store:Type="Tables" />
+          <EntitySet Name="pipes" EntityType="Self.pipes" Schema="test" store:Type="Tables" />
+          <EntitySet Name="projects" EntityType="Self.projects" Schema="test" store:Type="Tables" />
+          <EntitySet Name="property_owner" EntityType="Self.property_owner" Schema="test" store:Type="Tables" />
+          <EntitySet Name="property_type" EntityType="Self.property_type" Schema="test" store:Type="Tables" />
+          <EntitySet Name="subfacilities" EntityType="Self.subfacilities" Schema="test" store:Type="Tables" />
+          <EntitySet Name="units" EntityType="Self.units" Schema="test" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="test" store:Type="Tables" />
+          <AssociationSet Name="facilities_id" Association="Self.facilities_id">
+            <End Role="facilities" EntitySet="facilities" />
+            <End Role="subfacilities" EntitySet="subfacilities" />
+          </AssociationSet>
+          <AssociationSet Name="phase_id" Association="Self.phase_id">
+            <End Role="phases" EntitySet="phases" />
+            <End Role="facilities" EntitySet="facilities" />
+          </AssociationSet>
+          <AssociationSet Name="project_id" Association="Self.project_id">
+            <End Role="projects" EntitySet="projects" />
+            <End Role="phases" EntitySet="phases" />
+          </AssociationSet>
+          <AssociationSet Name="subfacility_id" Association="Self.subfacility_id">
+            <End Role="subfacilities" EntitySet="subfacilities" />
+            <End Role="units" EntitySet="units" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="facilities">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="phase_id" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="subfacilities" Relationship="Self.facilities_id" FromRole="facilities" ToRole="subfacilities" />
+          <NavigationProperty Name="phases" Relationship="Self.phase_id" FromRole="facilities" ToRole="phases" />
+        </EntityType>
+        <EntityType Name="phases">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="project_id" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="facilities" Relationship="Self.phase_id" FromRole="phases" ToRole="facilities" />
+          <NavigationProperty Name="projects" Relationship="Self.project_id" FromRole="phases" ToRole="projects" />
+        </EntityType>
+        <EntityType Name="pipes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SpecName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Npd" Type="Single" />
+          <Property Name="NpdUnitType" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="dn" Type="Single" />
+          <Property Name="DnUnitType" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="thickness" Type="Single" />
+          <Property Name="ContractorCommodityCode" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="ShortMaterialDescription" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="LocalizedShortMaterialDesc" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="LongMaterialDescription" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Vendor" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Manufacturer" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="FabricationType" Type="Int32" />
+          <Property Name="SupplyResponsibility" Type="Int32" />
+          <Property Name="ReportingType" Type="Int32" />
+          <Property Name="QuantityOfReportableParts" Type="Int32" />
+          <Property Name="GasketRequirements" Type="Int32" />
+          <Property Name="BoltingRequirements" Type="Int32" />
+          <Property Name="ClampRequirement" Type="Int32" />
+          <Property Name="WeldingRequirement" Type="Int32" />
+          <Property Name="LooseMaterialRequirements" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="SubstCapScrewsQuantity" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="MultiportValveOpReq" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="ValveOperatorType" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="ValveOperatorCatalogPartNumber" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="projects">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="phases" Relationship="Self.project_id" FromRole="projects" ToRole="phases" />
+        </EntityType>
+        <EntityType Name="property_owner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="first_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="last_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="Int32" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="adress" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="property_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="subfacilities">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="facility_id" Type="Int32" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="facilities" Relationship="Self.facilities_id" FromRole="subfacilities" ToRole="facilities" />
+          <NavigationProperty Name="units" Relationship="Self.subfacility_id" FromRole="subfacilities" ToRole="units" />
+        </EntityType>
+        <EntityType Name="units">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="subfacility_id" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="subfacilities" Relationship="Self.subfacility_id" FromRole="units" ToRole="subfacilities" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="facilities_id">
+          <End Role="facilities" Type="Self.facilities" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="subfacilities" Type="Self.subfacilities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="facilities">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="subfacilities">
+              <PropertyRef Name="facility_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="phase_id">
+          <End Role="phases" Type="Self.phases" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="facilities" Type="Self.facilities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="phases">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="facilities">
+              <PropertyRef Name="phase_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="project_id">
+          <End Role="projects" Type="Self.projects" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="phases" Type="Self.phases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projects">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="phases">
+              <PropertyRef Name="project_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="subfacility_id">
+          <End Role="subfacilities" Type="Self.subfacilities" Multiplicity="0..1" />
+          <End Role="units" Type="Self.units" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subfacilities">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="units">
+              <PropertyRef Name="subfacility_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="testEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="facilities" EntityType="Self.facilities" />
+          <EntitySet Name="phases" EntityType="Self.phases" />
+          <EntitySet Name="pipes" EntityType="Self.pipes" />
+          <EntitySet Name="projects" EntityType="Self.projects" />
+          <EntitySet Name="property_owner" EntityType="Self.property_owner" />
+          <EntitySet Name="property_type" EntityType="Self.property_type" />
+          <EntitySet Name="subfacilities" EntityType="Self.subfacilities" />
+          <EntitySet Name="units" EntityType="Self.units" />
+          <EntitySet Name="users" EntityType="Self.users" />
+          <AssociationSet Name="facilities_id" Association="Self.facilities_id">
+            <End Role="facilities" EntitySet="facilities" />
+            <End Role="subfacilities" EntitySet="subfacilities" />
+          </AssociationSet>
+          <AssociationSet Name="phase_id" Association="Self.phase_id">
+            <End Role="phases" EntitySet="phases" />
+            <End Role="facilities" EntitySet="facilities" />
+          </AssociationSet>
+          <AssociationSet Name="project_id" Association="Self.project_id">
+            <End Role="projects" EntitySet="projects" />
+            <End Role="phases" EntitySet="phases" />
+          </AssociationSet>
+          <AssociationSet Name="subfacility_id" Association="Self.subfacility_id">
+            <End Role="subfacilities" EntitySet="subfacilities" />
+            <End Role="units" EntitySet="units" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище testModelContainer" CdmEntityContainer="testEntities">
+          <EntitySetMapping Name="facilities">
+            <EntityTypeMapping TypeName="testModel.facilities">
+              <MappingFragment StoreEntitySet="facilities">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="phase_id" ColumnName="phase_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="phases">
+            <EntityTypeMapping TypeName="testModel.phases">
+              <MappingFragment StoreEntitySet="phases">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="project_id" ColumnName="project_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pipes">
+            <EntityTypeMapping TypeName="testModel.pipes">
+              <MappingFragment StoreEntitySet="pipes">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="SpecName" ColumnName="SpecName" />
+                <ScalarProperty Name="Npd" ColumnName="Npd" />
+                <ScalarProperty Name="NpdUnitType" ColumnName="NpdUnitType" />
+                <ScalarProperty Name="dn" ColumnName="dn" />
+                <ScalarProperty Name="DnUnitType" ColumnName="DnUnitType" />
+                <ScalarProperty Name="thickness" ColumnName="thickness" />
+                <ScalarProperty Name="ContractorCommodityCode" ColumnName="ContractorCommodityCode" />
+                <ScalarProperty Name="ShortMaterialDescription" ColumnName="ShortMaterialDescription" />
+                <ScalarProperty Name="LocalizedShortMaterialDesc" ColumnName="LocalizedShortMaterialDesc" />
+                <ScalarProperty Name="LongMaterialDescription" ColumnName="LongMaterialDescription" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="FabricationType" ColumnName="FabricationType" />
+                <ScalarProperty Name="SupplyResponsibility" ColumnName="SupplyResponsibility" />
+                <ScalarProperty Name="ReportingType" ColumnName="ReportingType" />
+                <ScalarProperty Name="QuantityOfReportableParts" ColumnName="QuantityOfReportableParts" />
+                <ScalarProperty Name="GasketRequirements" ColumnName="GasketRequirements" />
+                <ScalarProperty Name="BoltingRequirements" ColumnName="BoltingRequirements" />
+                <ScalarProperty Name="ClampRequirement" ColumnName="ClampRequirement" />
+                <ScalarProperty Name="WeldingRequirement" ColumnName="WeldingRequirement" />
+                <ScalarProperty Name="LooseMaterialRequirements" ColumnName="LooseMaterialRequirements" />
+                <ScalarProperty Name="SubstCapScrewsQuantity" ColumnName="SubstCapScrewsQuantity" />
+                <ScalarProperty Name="MultiportValveOpReq" ColumnName="MultiportValveOpReq" />
+                <ScalarProperty Name="ValveOperatorType" ColumnName="ValveOperatorType" />
+                <ScalarProperty Name="ValveOperatorCatalogPartNumber" ColumnName="ValveOperatorCatalogPartNumber" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="projects">
+            <EntityTypeMapping TypeName="testModel.projects">
+              <MappingFragment StoreEntitySet="projects">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="property_owner">
+            <EntityTypeMapping TypeName="testModel.property_owner">
+              <MappingFragment StoreEntitySet="property_owner">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="adress" ColumnName="adress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="property_type">
+            <EntityTypeMapping TypeName="testModel.property_type">
+              <MappingFragment StoreEntitySet="property_type">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subfacilities">
+            <EntityTypeMapping TypeName="testModel.subfacilities">
+              <MappingFragment StoreEntitySet="subfacilities">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="facility_id" ColumnName="facility_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="units">
+            <EntityTypeMapping TypeName="testModel.units">
+              <MappingFragment StoreEntitySet="units">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="subfacility_id" ColumnName="subfacility_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="testModel.users">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
